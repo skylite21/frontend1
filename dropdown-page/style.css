@@ -1,0 +1,102 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+body {
+  background-color: rgb(32 38 53);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.main-menu-container {
+  padding-top: 50px;
+}
+
+.main-menu {
+  padding: 0;
+  border-bottom: 3px solid #5affd9;
+  text-align: center;
+}
+
+.main-menu-item {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.main-menu-item a,
+.main-menu-item span {
+  text-decoration: none;
+  color: #54beff;
+  display: block;
+  padding: 20px 0;
+}
+
+.main-menu-item > a,
+.main-menu-item > span {
+  width: 120px;
+}
+
+.sub-menu {
+  list-style: none;
+  padding: 0;
+  background-color: rgb(34 116 175);
+  width: 200px;
+  position: absolute;
+  top: 59px;
+  left: 0;
+  display: none;
+}
+
+.main-menu-item:hover > a,
+.main-menu-item:hover > span {
+  background-color: rgb(34 116 175);
+  color: white;
+}
+
+.sub-menu-item:hover > a {
+  background-color: rgb(66 130 177);
+  color: white;
+
+}
+
+.main-menu-item:hover > .sub-menu {
+  display: block;
+}
+
+
+.main-content {
+  color: white;
+  width: 800px;
+  margin: 40px auto 0 auto;
+}
+
+header {
+  width: 400px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 22px;
+  margin: 0 0 30px 0;
+}
+
+main {
+  width: 500px;
+  line-height: 1.6;
+}
+
+.company-image {
+  float: right;
+}
+
+footer {
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+}
