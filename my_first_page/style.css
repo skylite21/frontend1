@@ -1,0 +1,86 @@
+
+body {
+  background-color: #488ccd;
+  width: 800px;
+  padding: 50px;
+  /*
+   * ha kettő érték van megadva a marginnak vagy a paddingnak akkor az első
+   * érték alul-felül, a második érték pedig jobbra-balra értendő
+   */
+margin: 0 auto;
+/*
+ * ezek a css property-k öröklődnek lefelé a bodyn belüli elemekre
+ */
+font-family: 'Montserrat', sans-serif;
+color: white;
+}
+
+.page-title {
+  /* color: white; */
+  font-size: 50px;
+  font-weight: 200;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  /*
+   * ha igy adjuk meg a margót akkor az óramutató járásával megegyezező
+   * irányban kell gondolkodni, tehát felül, jobbra, lent, balra
+   */
+margin: 40px 0 40px 0;
+}
+
+.main-menu {
+  background-color: #284c80;
+  padding: 0;
+  list-style: none;
+}
+
+.main-menu-item {
+  /* a menüpontok egymás mellé kell h kerüljenek */
+  display: inline;
+}
+
+/* a main-menu-item-en belüli a tag */
+.main-menu-item a {
+  color: rgb(188, 248, 255);
+  text-decoration: none;
+  margin-left: 20px;
+  /* reagálni fog a magasság változtatásra, de nem lesz teljes szélességű */
+  display: inline-block;
+  padding: 20px 0;
+}
+
+/* ha a menüpont fölé visszük az egeret */
+.main-menu-item a:hover{
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.created-date {
+  margin-bottom: 40px;
+  font-style: italic;
+  color: #284c80;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+
+/* vesszővel elválasztva több elemet is kiválaszthatunk */
+.content-lead, .content-body {
+  line-height: 1.7;
+}
+
+.content-lead {
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+
+.content-body {
+  font-size: 18px;
+}
+
+.content-image-container {
+  /* az inline elemeket text-align: center-el lehet középre igazítani */
+  text-align: center;
+}
+

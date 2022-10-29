@@ -1,0 +1,13 @@
+.red-box {
+    background-color: red;
+    color: white;
+    font-size: 30px;
+}
+
+.rounded {
+    border-radius: 50px;
+}
+
+.my-title {
+    font-size: 50px;
+}
