@@ -21,7 +21,12 @@
     <link rel="stylesheet" href="./style.css" type="text/css" />
   </head>
   <body>
-    <header>
+    <header id="fejlec">
+      <input type="checkbox" id="toggle" class="menu-checkbox" />
+      <label for="toggle" class="toggle-label">
+        <i class="fas fa-bars"></i>
+      </label>
+
       <div class="logo">
         <h1>The latest news</h1>
         <h2>Always the best</h2>
@@ -36,5 +41,24 @@
         </ul>
       </nav>
     </header>
+    <main>
+      <section class="main-article">
+        <div class="main-article-image-container">
+          <img class="main-article-image" src="./banner.jpg" alt="" />
+        </div>
+        <div class="main-article-text clearfix">
+          <a class="tag tag-politics" href="#">
+            Politics
+            <i class="fas fa-landmark"></i>
+          </a>
+          <h1>Check out that headline!</h1>
+          <h2>That's what a headline should do!</h2>
+          <a href="#" class="continue-to-article">
+            Read more
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
