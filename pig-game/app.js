@@ -51,5 +51,29 @@ document.querySelector('.dice').style.display = 'none';
 
 // a kokca dobás, gombra kattintás
 document.querySelector('.btn-roll').addEventListener('click', function() {
-  console.log('dobtunk a kockával');
+  // 1. generálunk egy véletlen számot, 1-6 között
+  const dice = Math.floor(Math.random() * 6 ) + 1;
+  
+  // 2. jelenítsük meg az eredményt a UI-on:
+  document.querySelector('.dice').style.display = 'block';
+  // template string
+  document.querySelector('.dice').setAttribute('src', `dice-${dice}.png`);
+
+  // szekvencia: a program az utasításokat sorról sorra hatja végre
+
+  // string concatenation
+  // document.querySelector('.dice').setAttribute('src', 'dice-'+dice+'.png');
+
+  // ha nem 1 a dobott érték akkor felírjuk a pontszámot, és ugyanaz a játékos dobhat újra
+  // elágazás:
+  if (dice !== 1) {
+    roundScore = roundScore + dice;
+    // a UI-on megjelenítjük az eredményt:
+    document.querySelector('#current-'+activePlayer).textContent = roundScore;
+  }
+  // ha a dobott érték 1, akkor a pontok elvesznek és a következő játékos jön
+  
+
+
+
 });
