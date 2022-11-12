@@ -95,5 +95,32 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
   // 2. UI-t frissítsük
   document.querySelector('#score-'+activePlayer).textContent = scores[activePlayer];
 
+  // 3. nézzük meg hogy van e nyertes
+  if (scores[activePlayer] >= 20) {
+    document.querySelector(`.player-${activePlayer}-panel`).classList.add('winner');
+    document.querySelector(`.player-${activePlayer}-panel`).classList.remove('active');
+
+    document.querySelector('#name-'+activePlayer).textContent = 'Winner!';
+    document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.btn-hold').style.display = 'none';
+    document.querySelector('.btn-roll').style.display = 'none';
+
+  } else {
+    // másik játékos jön:
+    roundScore = 0;
+    if (activePlayer === 0) {
+      activePlayer = 1;
+    } else {
+      activePlayer = 0;
+    }
+    // UI-on frissítsük az értékeket:
+    document.querySelector('#current-0').textContent = 0;
+    document.querySelector('#current-1').textContent = 0;
+    document.querySelector('.player-1-panel').classList.toggle('active');
+    document.querySelector('.player-2-panel').classList.toggle('active');
+
+  }
+
+
 
 });
