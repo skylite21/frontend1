@@ -13,7 +13,7 @@ drive();
 
 
 let food = 'pizza';
-cook(); 
+cook();
 
 // function declaration
 function cook() {
