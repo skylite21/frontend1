@@ -72,20 +72,27 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     document.querySelector('#current-'+activePlayer).textContent = roundScore;
   } else {
   // ha a dobott érték 1, akkor a pontok elvesznek és a következő játékos jön
-    roundScore = 0;
-    if (activePlayer === 0) {
-      activePlayer = 1;
-    } else {
-      activePlayer = 0;
-    }
-    // UI-on frissítsük az értékeket:
-    document.querySelector('#current-0').textContent = 0;
-    document.querySelector('#current-1').textContent = 0;
-    document.querySelector('.player-1-panel').classList.toggle('active');
-    document.querySelector('.player-2-panel').classList.toggle('active');
+    nextPlayer();
   }
 
 });
+
+// DRY = do not repeat yourself
+
+function nextPlayer() {
+  roundScore = 0;
+  if (activePlayer === 0) {
+    activePlayer = 1;
+  } else {
+    activePlayer = 0;
+  }
+  // UI-on frissítsük az értékeket:
+  document.querySelector('#current-0').textContent = 0;
+  document.querySelector('#current-1').textContent = 0;
+  document.querySelector('.player-1-panel').classList.toggle('active');
+  document.querySelector('.player-2-panel').classList.toggle('active');
+
+}
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
   // 1. a játékos megszerzi a kör alatt szerzett pontjait
@@ -107,18 +114,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 
   } else {
     // másik játékos jön:
-    roundScore = 0;
-    if (activePlayer === 0) {
-      activePlayer = 1;
-    } else {
-      activePlayer = 0;
-    }
-    // UI-on frissítsük az értékeket:
-    document.querySelector('#current-0').textContent = 0;
-    document.querySelector('#current-1').textContent = 0;
-    document.querySelector('.player-1-panel').classList.toggle('active');
-    document.querySelector('.player-2-panel').classList.toggle('active');
-
+    nextPlayer();
   }
 
 
