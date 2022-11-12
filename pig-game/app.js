@@ -70,10 +70,19 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     roundScore = roundScore + dice;
     // a UI-on megjelenítjük az eredményt:
     document.querySelector('#current-'+activePlayer).textContent = roundScore;
-  }
+  } else {
   // ha a dobott érték 1, akkor a pontok elvesznek és a következő játékos jön
-  
-
-
+    roundScore = 0;
+    if (activePlayer === 0) {
+      activePlayer = 1;
+    } else {
+      activePlayer = 0;
+    }
+    // UI-on frissítsük az értékeket:
+    document.querySelector('#current-0').textContent = 0;
+    document.querySelector('#current-1').textContent = 0;
+    document.querySelector('.player-1-panel').classList.toggle('active');
+    document.querySelector('.player-2-panel').classList.toggle('active');
+  }
 
 });
