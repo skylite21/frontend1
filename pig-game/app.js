@@ -86,3 +86,14 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
   }
 
 });
+
+document.querySelector('.btn-hold').addEventListener('click', function() {
+  // 1. a játékos megszerzi a kör alatt szerzett pontjait
+  scores[activePlayer] = scores[activePlayer] + roundScore;
+  // scores[activePlayer] += roundScore;
+  
+  // 2. UI-t frissítsük
+  document.querySelector('#score-'+activePlayer).textContent = scores[activePlayer];
+
+
+});
