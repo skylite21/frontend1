@@ -107,8 +107,8 @@ function nextPlayer() {
   // UI-on frissítsük az értékeket:
   document.querySelector('#current-0').textContent = 0;
   document.querySelector('#current-1').textContent = 0;
+  document.querySelector('.player-0-panel').classList.toggle('active');
   document.querySelector('.player-1-panel').classList.toggle('active');
-  document.querySelector('.player-2-panel').classList.toggle('active');
 
 }
 
